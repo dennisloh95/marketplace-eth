@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useSWR from "swr";
 
 const adminAddresses = {
-  "0x17c8a129ae8b105ddd9511f5e1020700822056d19858d013816c651917634498": true,
+  "0xbff557dc771d8d0582f460704b573f71d7069db8183708fe4fca1582620683c2": true,
 };
 
 export const handler = (web3, provider) => () => {
@@ -11,6 +11,7 @@ export const handler = (web3, provider) => () => {
     async () => {
       const accounts = await web3.eth.getAccounts();
       const account = accounts[0];
+      // console.log(web3.utils.keccak256(account));
       if (!account) {
         throw new Error(
           "Cannot retrieve and account. Please refresh the browser. "
